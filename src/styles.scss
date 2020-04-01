@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./assets/style/common";
+@import "./assets/icons/tellicons";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: $font;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+html,body{
+    width: 100%;
+    min-height: 100%;
+    background-color: $bg-color;
+    font-size: $size;
+    font-weight: 300;
+    font-family: $font;
+    color: $ternary;
+    line-height: $line-height;
+}
+
+@include icons();

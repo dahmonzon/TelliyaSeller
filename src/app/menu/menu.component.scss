@@ -1,0 +1,120 @@
+@import '../../assets/style/common';
+
+$company_height: 80px;
+$bottom_height: 100px;
+
+
+.base{
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    .company{
+        width: 100%;
+        height: $company_height;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+
+        .logo{
+            width: 35px;
+            height: 35px;
+            background-color: $ternary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: $font1;
+            color: $primary;
+            font-size: $size2;
+            font-weight: 700;
+            border-radius: 50%; 
+            margin-right: 10px;
+        }
+
+        .name, .service{
+            font-weight: 500;
+            font-size: $size2;
+            color: $ternary;
+            font-family: $font1;
+            margin-right: 5px;
+        }
+        .service{
+            color: $secondary;
+        }
+    }
+
+    .features{
+        display: block;
+        width: 100%;
+        height: calc(100% - #{$bottom_height + $company_height});
+        overflow-y: auto;
+        .feat{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+            padding: $feature_padding;
+            border-right: 3.5px solid transparent;
+
+            .icons{
+                font-size: $size;
+                font-weight: 700;
+                color: $text-color;
+                margin-right: 12px;
+            }
+            
+            .title{
+                font-size: $size1;
+                color: $text-color;
+                font-family: $font; 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .current{
+            background-color: #f8faff;
+            // border-right: 3.5px solid  #577ee8;
+            .icons, .title{
+                font-weight: 700;
+                font-size: $size1;
+                // color: $ternary !important;
+                color: $secondary;
+            }
+        }
+    }
+
+    .menu-bottom{
+        width: 100%;
+        height: $bottom_height;
+        padding: 0px 20px;
+
+        .user{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .avatar{
+                @include avatar($sz: 30px);
+            }
+
+            i{
+                color: red;
+            }
+
+            .name {
+                flex: 1;
+            }
+        }
+
+        .menu-shop{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba($color: $border, $alpha: .95);
+        }
+    }
+}

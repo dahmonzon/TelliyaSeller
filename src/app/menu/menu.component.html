@@ -1,0 +1,26 @@
+
+<div class="base">
+
+    <div class="company">
+        <span class="logo">T</span>
+        <span class="name">Telliya</span>
+        <span class="service">Seller</span>
+    </div>
+
+    <div class="features">
+      <div class="feat" [class.current]="feature.isCurrent" (click)="onFeatureClick(feature.icon)" *ngFor="let feature of features">
+        <i class="icon-{{feature.icon}} icons"></i>
+        <span class="title">{{feature.name}}</span>
+      </div>
+    </div>
+
+    <div class="menu-bottom">
+        <div class="menu-shop">
+        </div>
+        <div class="user">
+            <img src="{{current_user.photo}}" alt="user avatar" class="avatar">
+            <strong class="name">{{current_user.name}} {{current_user.last_name}}</strong>
+            <i class="icon-switch"></i>
+        </div>
+    </div>
+</div>
