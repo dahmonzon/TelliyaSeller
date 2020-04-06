@@ -1,1 +1,26 @@
-<p>core works!</p>
+<div class="base">
+    <div class="m-menu" [class.open-m-menu]="open_menu">
+        <app-menu></app-menu>
+    </div>
+    <div class="bg-menu" [class.open-bg-menu]="open_menu" (click)="closeMenu()"></div>
+    <div class="main-header">
+        <div class="company">
+            <span class="logo">T</span>
+        </div>
+        <button class="hamberger-menu" (click)="openMenu()">
+            <i class="tellicons icon-menu"></i>
+            <span>Menu</span>
+        </button>
+    </div>
+    <div class="main-content">
+        <div class="menu">
+            <app-menu></app-menu>
+        </div>
+    
+        <div class="content">
+            <div class="actions-feat"> <i class="tellicons icon-search"></i></div>
+            <div class="actions-feat message"> <i class="tellicons icon-chat"></i></div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

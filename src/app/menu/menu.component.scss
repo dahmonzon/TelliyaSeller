@@ -9,39 +9,7 @@ $bottom_height: 100px;
     width: 100%;
     height: 100%;
 
-    .company{
-        width: 100%;
-        height: $company_height;
-        display: flex;
-        align-items: center;
-        padding: 20px;
-
-        .logo{
-            width: 35px;
-            height: 35px;
-            background-color: $ternary;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: $font1;
-            color: $primary;
-            font-size: $size2;
-            font-weight: 700;
-            border-radius: 50%; 
-            margin-right: 10px;
-        }
-
-        .name, .service{
-            font-weight: 500;
-            font-size: $size2;
-            color: $ternary;
-            font-family: $font1;
-            margin-right: 5px;
-        }
-        .service{
-            color: $secondary;
-        }
-    }
+    @include brand();
 
     .features{
         display: block;
@@ -104,8 +72,10 @@ $bottom_height: 100px;
                 color: red;
             }
 
-            .name {
+            .user-name {
                 flex: 1;
+                font-size: $size1;
+                font-weight: 600;
             }
         }
 

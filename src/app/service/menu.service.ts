@@ -24,12 +24,12 @@ export class MenuService {
     //   name: "Achats",
     //   isCurrent: false
     // },
-    {
-      icon: "tag",
-      link: "/product",
-      name: "Produits",
-      isCurrent: false
-    },
+    // {
+    //   icon: "Tag",
+    //   link: "/product",
+    //   name: "Produits",
+    //   isCurrent: false
+    // },
     // {
     //   icon: "user",
     //   link: "/customer",
@@ -54,15 +54,13 @@ export class MenuService {
     //   name: "Equipe",
     //   isCurrent: false
     // },
-    {
-      icon: "settings",
-      link: "/setting",
-      name: "Parametre",
-      isCurrent: false   
-    },
+    // {
+    //   icon: "settings",
+    //   link: "/setting",
+    //   name: "Parametre",
+    //   isCurrent: false   
+    // },
   ];
 
-  constructor() { 
-
-  }
+  constructor() { }
 }

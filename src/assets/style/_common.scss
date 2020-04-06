@@ -1,55 +1,44 @@
+@import './telliya-variables';
 
-
-$primary: #fff;
-$secondary: #386FDE;
-$ternary: black;//#222424;;
-$text-color: #666;
-$border: #E9E9E9;//rgb(160, 168, 180); // #B0BEC5 can be used 
-$bg-color: #F9FBFA;//#E8E8E8;//#ECEDEE;
-$quary: #957127;
-
-
-// app font 
-$font: "IBM Plex Sans Condensed";
-$font1: 'Lobster';
-$font-temp: 'Lobster Two';
-$font2: 'Tangerine';
-
-// breakpoint 
-$phone: 550px;
-$tablette: 1024px;
-
-// mobile font size
-$size0: 11px;
-$size: 13px;
-$size1: 15px;
-$size2: 20px;
-$line-height0: 16px;
-$line-height: 21px;
-$line-height1: 25px;
-$line-height2: 25px;
-
-// important size
-$menu_width: 230px;
-$feature_padding: 8px 20px;
-
-// z-index
-$header_z_index: 10000;
-
-@media screen and (max-width:$tablette) and (min-height: $phone){
-    // tablette font-size
-    $size0: 12px;
-    $size: 14px;
-    $size1: 16px;
-    $size2: 21px;
+@mixin logo($cl: $primary, $bg: $ternary, $fs: $size2, $fw: 900){
+    width: 30px;
+    height: 30px;
+    background-color: $bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font;
+    color: $cl;
+    font-size: $fs;
+    font-weight: $fw;
+    border-radius: 2px; 
+    margin-right: 10px;
 }
 
-@media screen and (min-width: $tablette){
-    // desktop font-size
-    $size0: 13px;
-    $size: 15px;
-    $size1: 17px;
-    $size1: 23px;
+@mixin brand(){
+    .company{
+        width: 100%;
+        height: $company_height;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .logo{
+        @include logo();
+    }
+
+    .name, .service{
+        font-weight: 900;
+        font-size: $size2;
+        color: $ternary;
+        font-family: $font;
+        margin-right: 5px;
+    }
+
+    .service{
+        color: $secondary;
+    }
 }
 
 @mixin avatar($sz: 35px, $mr: 5px) {
@@ -151,7 +140,7 @@ $header_z_index: 10000;
     }
 }
 
-@mixin  btn($pd: 0px 15px,$rd: 3px,$height:27px,$bg: inherit,$cl:$ternary,$fw: 300, $fs: 15px,$br:$border,$is: $size) {
+@mixin  btn($pd: 0px 15px,$rd: 3px,$height:27px,$bg: inherit,$cl:$ternary,$fw: 300, $fs: 15px,$br:$border,$is: $size1) {
     border: none;
     border-radius: $rd;
     padding: $pd;
@@ -200,53 +189,5 @@ $header_z_index: 10000;
         span{
             margin: 0px 2.5px;
         }
-    }
-}
-
-
-@mixin checkElementStyle($color:$secondary,$size:19px) {
-
-    input[type=radio], input[type=checkbox] {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        -ms-appearance: none;
-
-        border-radius: 50%;
-        height: $size;
-        width: $size;
-        background: #fff;
-        border: 1.5px solid $border;
-        position: relative;
-        cursor: pointer;
-    }
-
-    input[type=checkbox]{
-        border-radius: 1.5px;
-    }
-
-    input[type=radio]:checked, input[type=checkbox]:checked{
-        border-color: $color;
-        position: relative;
-    }
-
-    input[type=radio]:checked::after, input[type=checkbox]:checked::after  {
-            position: absolute;
-            content: "";
-            display: block;
-            width: $size / 2;
-            height: $size / 2;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            border-radius: 50%;
-            background-color: $color;
-    }
-
-    input[type=checkbox]:checked::after{
-        border-radius: 0;
-    }
-
-    input[type=checkbox]:focus, input[type=radio]:focus{
-        outline: none;
     }
 }
