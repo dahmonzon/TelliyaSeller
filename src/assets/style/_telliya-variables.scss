@@ -1,0 +1,54 @@
+
+$primary: #fff;
+$secondary: #386FDE;
+$ternary: black;//#222424;;
+$text-color: #666;
+$border: #E9E9E9;//rgb(160, 168, 180); // #B0BEC5 can be used 
+$bg-color: #F9FBFA;//#E8E8E8;//#ECEDEE;
+$quary: #957127;
+
+
+// app font 
+$font: "IBM Plex Sans Condensed";
+$font1: 'Lobster';
+$font-temp: 'Lobster Two';
+$font2: 'Tangerine';
+
+// breakpoint 
+$phone: 550px;
+$tablette: 1024px;
+
+// mobile font size
+$size0: 11px;
+$size: 13px;
+$size1: 15px;
+$size2: 20px;
+$line-height0: 16px;
+$line-height: 21px;
+$line-height1: 25px;
+$line-height2: 25px;
+
+// important size
+$menu_width: 230px;
+$feature_padding: 8px 20px;
+
+// z-index
+$header_z_index: 10000;
+$menu_z_index: 10001;
+
+
+@media screen and (max-width:$tablette) and (min-height: $phone){
+    // tablette font-size
+    $size0: 12px;
+    $size: 14px;
+    $size1: 16px;
+    $size2: 21px;
+}
+
+@media screen and (min-width: $tablette){
+    // desktop font-size
+    $size0: 13px;
+    $size: 15px;
+    $size1: 17px;
+    $size1: 23px;
+}
