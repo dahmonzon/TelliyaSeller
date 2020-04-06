@@ -191,3 +191,71 @@
         }
     }
 }
+
+@mixin choiceLabel($pd,$cl, $bg, $fs,$fw){
+    .m-choice-label, .s-choice-label {
+        padding: $pd;
+        display: flex;
+        align-items: center;
+        background-color: $bg;
+        justify-content: center;
+        font-size: $fs;
+        color: $cl;
+        font-weight: $fw;
+        border-radius: 2px;
+        i{
+            margin-right: 6px;
+        }
+    }
+}
+
+@mixin singleChoiceStyle($pd: 5px 10px,$cl: $ternary, $bg: #fefefe, $sbg: $primary, $fs: $size,$fw: 600, $is: $size2, $ic: $ternary, $sic: $ternary){
+    @include choiceLabel($pd, $cl,$bg,$fs,$fw);
+    .s-choice{
+        appearance: none;
+    }
+    .s-choice + .s-choice-label > i {
+        &:before{
+            color: $ic;
+            font-size: $is;
+            content: '\ea56';
+        }
+    }
+    .s-choice:checked + .s-choice-label > i {
+        &:before{
+            color: $sic;
+            font-size: $is;
+            content: '\ea55';
+        }
+    }
+    .s-choice:checked + .s-choice-label {
+        background-color: $sbg;
+        box-shadow: 1px 1px 2px rgba($color: #000, $alpha: .05), -1px -1px 2px rgba($color: #000, $alpha: .05);
+    }
+}
+
+@mixin multiChoiceStyle($pd: 5px 10px,$cl: $ternary, $bg: #000, $sbg: $primary, $fs: $size,$fw: 600, $is: $size2, $ic: $ternary, $sic: $ternary){
+    @include choiceLabel($pd, $cl,$bg,$fs,$fw);
+    .m-choice{
+        appearance: none;
+    }
+    .m-choice + .m-choice-label  > i {
+        &:before{
+            color: $sic;
+            font-size: $is;
+            content: '\e92e';
+        }
+    }
+
+    .m-choice:checked + .m-choice-label > i {
+        &:before{
+            color: $sic;
+            font-size: $is;
+            content: '\e92d';
+        }
+    }
+    .m-choice:checked + .m-choice-label {
+        background-color: $sbg;
+        box-shadow: 1px 1px 2px rgba($color: #000, $alpha: .05), -1px -1px 2px rgba($color: #000, $alpha: .05);
+    }
+}
