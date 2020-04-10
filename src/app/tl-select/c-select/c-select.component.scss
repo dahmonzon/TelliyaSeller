@@ -1,0 +1,91 @@
+@import "../../../assets/style/common";
+
+.tl-field{
+    width: 50%;
+    height: 45px;
+    position: relative;
+
+    input{
+        width: 100%;
+        height: 100%;
+        border: none;
+        font-size: $size1;
+        border: 1px solid $border;
+        border-radius: 1.5px;
+        padding: 0px 30px 0px 50px;
+        cursor: pointer;
+        &:focus{
+            outline: none;
+            border: 1.3px solid $secondary;
+            box-shadow: 4px 4px 4px rgba($color: $secondary, $alpha: .15), -4px -4px 4px rgba($color: $secondary, $alpha: .15);
+        }
+
+    }
+
+
+    .indicator{
+        width: 50px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        @include imageStyle($wd: 30px, $ht: 30px);
+
+        #icons{
+            width: 30px;
+            height: 20px;
+            background-size: cover;
+        }
+    }
+
+    #arrow{
+        width: 35px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $size2;
+    }
+}
+
+.options-container{
+    width: 100%;
+    min-height: 40px;
+    background-color: white;
+    box-shadow: 4px 4px 8px rgba($color: $secondary, $alpha: .1), -4px -4px 8px rgba($color: $secondary, $alpha: .1);
+    display: block;
+    overflow: auto;
+
+    .option{
+        display: flex;
+        padding: 8px 10px;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        @include imageStyle($wd: 30px, $ht: 30px);
+
+        .option-left{
+            display: flex;
+            align-items: center;
+
+            #icons, .picture{margin-right: 10px;}
+
+            #icons{
+                width: 30px;
+                height: 20px;
+                background-size: cover;
+            }
+        }
+    }
+    .current{
+        background-color: rgba($color: $quary, $alpha: .1)
+    }
+}

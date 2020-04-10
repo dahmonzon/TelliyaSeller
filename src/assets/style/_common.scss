@@ -259,3 +259,23 @@
         box-shadow: 1px 1px 2px rgba($color: #000, $alpha: .05), -1px -1px 2px rgba($color: #000, $alpha: .05);
     }
 }
+
+@mixin imageStyle($wd: 100%, $ht: 100%,$pd: 0px, $brs: 0px){
+    .picture{
+        width: $wd;
+        height: $ht;
+        padding: $pd;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        border-radius: $brs;
+        overflow: hidden;
+
+        img{
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+
+
+<div class="tl-field" #cselectfield>
+    <div class="indicator" (click)="showDropdown()">
+        <div class="picture" *ngIf="!!currentOption.photo">
+            <img src="{{currentOption.photo}}" alt="option-picture" class="pict">
+        </div>
+        <span id="icons" [class]="currentOption.icons" *ngIf="!!currentOption.icons"></span>
+    </div>
+    <input #input [class.has-indicator]="true" readonly [value]="currentOption.name" 
+    (click)="showDropdown()" autocomplete="off">
+    <span id="arrow" (click)="showDropdown()"  class="tellicons icon-unfold_more"></span>
+</div>
+
+<ng-template  #mytemp>
+    <div class="options-container">
+        <div [class.current]="option.isSelect" (click)="onOptionClick(option)" class="option" *ngFor="let option of options">
+            <div class="option-left">
+                <div class="picture" *ngIf="!!option.photo">
+                    <img src="{{option.photo}}" alt="option-picture" class="pict">
+                </div>
+                <span id="icons" [class]="option.icons" *ngIf="!!option.icons"></span>
+                <span class="option-name">{{option.name}}</span>
+            </div>
+            <span class="right">{{option.rightIndex}}</span>
+        </div>
+    </div>
+</ng-template>
