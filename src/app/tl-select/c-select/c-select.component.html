@@ -1,13 +1,23 @@
 
+<div class="tl-field" *ngIf="hasInput" #cselectfield>
+    <div class="indicator phone-code-ind" (click)="showDropdown()">
+        <span id="icons" [class]="currentOption.icons" *ngIf="!!currentOption.icons"></span>
+        <span class="tellicons icon-chevron-down"></span>
+        <span class="indi">{{currentOption.rightIndex}}</span>
+    </div>
+    <input type="tel"  id="phone-field"  placeholder="Numero de telephone"  [class.has-indicator]="!!currentOption.photo || !!currentOption.icons" (input)="phoneValueChange($event)">
+</div>
 
-<div class="tl-field" #cselectfield>
+
+
+<div class="tl-field" *ngIf="!hasInput" #cselectfield>
     <div class="indicator" (click)="showDropdown()">
         <div class="picture" *ngIf="!!currentOption.photo">
             <img src="{{currentOption.photo}}" alt="option-picture" class="pict">
         </div>
         <span id="icons" [class]="currentOption.icons" *ngIf="!!currentOption.icons"></span>
     </div>
-    <input #input [class.has-indicator]="true" readonly [value]="currentOption.name" 
+    <input [class.has-indicator]="!!currentOption.photo || !!currentOption.icons" readonly  [value]="currentOption.name" 
     (click)="showDropdown()" autocomplete="off">
     <span id="arrow" (click)="showDropdown()"  class="tellicons icon-unfold_more"></span>
 </div>

@@ -20,16 +20,30 @@ export class CSelectComponent implements OnInit {
   public tempref: TemplateRef<any>;
 
   public currentOption: SelectOption = {id: '', name: '--', isSelect: true};
+  public input_value = '';
 
   private overlayRef: OverlayRef;
 
-  @Input() options: SelectOption[]
+  @Input() hasInput: boolean = false;
+  @Input() options: SelectOption[];
   @Output() optionsChange = new EventEmitter<SelectOption>();
+  @Output() phoneNumber = new EventEmitter<string>();
 
-  constructor(private overlay: Overlay, private viewcontref: ViewContainerRef) { }
+
+
+  constructor(private overlay: Overlay, private viewcontref: ViewContainerRef) {
+
+   }
 
   ngOnInit(): void {
     this.currentOption = this.options.find((option) => option.isSelect === true);
+    this.optionsChange.emit(this.currentOption);
+    this.phoneNumber.emit("");
+  }
+
+  phoneValueChange(event): void {
+    let phone = event.target.value
+    this.phoneNumber.emit(phone);
   }
 
   onOptionClick(value: SelectOption){

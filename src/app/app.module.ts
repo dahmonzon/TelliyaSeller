@@ -14,6 +14,8 @@ import { CoreComponent } from './core/core.component';
 import { AuthComponent } from './auth/auth.component';
 import { MenuComponent } from './menu/menu.component';
 import {reducers, metaReducers} from './appStore'
+import { TlSelectModule } from './tl-select/tl-select.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import {reducers, metaReducers} from './appStore'
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    TlSelectModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -38,7 +41,8 @@ import {reducers, metaReducers} from './appStore'
     }),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     EffectsModule.forRoot([]),
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

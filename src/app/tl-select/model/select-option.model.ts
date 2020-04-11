@@ -1,6 +1,6 @@
 
 export interface SelectOption {
-    id: string;
+    id: string | number;
     name: string;
     isSelect: boolean;
     photo?: string;
