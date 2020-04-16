@@ -1,0 +1,70 @@
+@import './../../../assets/style/common';
+
+.base {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .wrapper{
+        padding: 40px 0px;
+        width: 400px;
+        @media screen and (max-width: $phone){
+            width: 95%;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include brand($pd:0px);
+
+        .head{
+            width: 100%;
+            font-size: $size1;
+            font-weight: 600;
+            margin: 15px 0px 30px 0;
+            i{
+                opacity: 0.7;
+                font-style: italic;
+            }
+        }
+
+        .error{
+            width: 100%;
+            text-align: center;
+            color: red;
+            margin-top: 25px;
+        }
+
+        .explain{
+            width: 100%;
+            line-height: 1.7rem;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            c-select{
+                width: 100%;
+            }
+
+            .actions{
+                width: 100%;
+                height: 35px;
+                margin-top: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                .next{
+                    @include btn-2(100%,$height: 100%,$bg: $secondary,$cl:white,$br:$secondary,$fs:$size);
+                    border-radius: 2px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<div class="base">
+    <div class="wrapper">
+      <div class="company">
+        <span class="logo">T</span>
+        <span class="name">Telliya</span>
+        <span class="service">Seller</span>
+      </div>
+      <span class="head">Ravis de vous revoir !</span>
+      <p class="explain">Bonjour, <br>
+        Connectez-vous et reprenez votre activité. Suivez vos ventes, vos achats, observez votre progression 
+        et attirez de nouveaux clients.
+      </p>
+      
+      <form >
+          <label for="phone">Numéro de téléphone</label>
+          <c-select [hasInput]="true"></c-select>
+          <label for="pass">Mot de passe</label>
+          <input  name="pass" type="password" id="pass" placeholder="ex: ********">
+          <!-- <span class="error" *ngIf="error.status">
+            {{error.content}}
+          </span> -->
+          <div class="actions">
+            <button class="next" >Connexion</button>
+          </div>
+      </form>
+      <hr class="divider">
+      <a class="link">Vous n'avez pas de boutique ? Creer le votre</a>
+    </div>
+  </div>
+
+  <!-- [(ngModel)]="login.pass" -->
