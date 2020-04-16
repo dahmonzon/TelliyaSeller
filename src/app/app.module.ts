@@ -16,6 +16,8 @@ import { MenuComponent } from './menu/menu.component';
 import {reducers, metaReducers} from './appStore'
 import { TlSelectModule } from './tl-select/tl-select.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginModule } from './auth/login/login.module';
+import { AuthService } from './service/auth.service';
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     TlSelectModule,
+    LoginModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -44,7 +47,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

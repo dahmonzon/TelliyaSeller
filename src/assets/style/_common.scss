@@ -15,13 +15,13 @@
     margin-right: 10px;
 }
 
-@mixin brand(){
+@mixin brand($ch: 40px,$pd: 20px){
     .company{
         width: 100%;
-        height: $company_height;
+        height: $ch;
         display: flex;
         align-items: center;
-        padding: 20px;
+        padding: $pd;
     }
 
     .logo{
